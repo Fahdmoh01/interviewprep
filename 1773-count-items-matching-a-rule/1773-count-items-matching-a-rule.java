@@ -11,7 +11,6 @@ class Solution {
     
     boolean findMatch(List<String> list, String rk, String rv){
         if(rk.equals("type")){
-            System.out.println(list.get(0));
             return rv.equals(list.get(0));
         }else if(rk.equals("color")){
             return rv.equals(list.get(1));
