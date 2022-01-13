@@ -1,5 +1,6 @@
 class Solution {
     public int diagonalSum(int[][] mat) {
+        //take the diagonals as moving one step forward down the stairs i.e at each new row, the index moves forward by one 
         int totalSum = secondaryDiagSum(mat) + primeDiagSum(mat);
         if(mat.length % 2 != 0){
             int mid= mat.length /2;
