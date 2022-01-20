@@ -1,13 +1,7 @@
 class Solution {
     public int[] plusOne(int[] digits) {
         int new_digits[] = new int [digits.length + 1];
-        int sum =0;  
-      
-    boolean results = checkAll(digits);
-        if(results){
-            new_digits[0]=1;
-            return new_digits;
-        }
+        int sum =0;            
         
         for(int i =digits.length - 1; i>=0 ; i--){
             if(digits[i] < 9){
@@ -17,17 +11,11 @@ class Solution {
                 digits[i] = 0;
             }
         }
-        
-        return digits;
+        //if no return statement it means all the values in the array are nine;
+        new_digits[0]=1;
+        return new_digits;
+      
         
     }
     
-    boolean checkAll(int arr[]){
-          for(int i =0; i< arr.length; i++){
-            if(arr[i] != 9){
-               return false;
-            }
-        }
-        return true;
-    }
 }
