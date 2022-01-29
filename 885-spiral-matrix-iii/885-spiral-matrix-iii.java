@@ -17,7 +17,7 @@ class Solution {
             if( dTracker==0 || dTracker == 2){
                 travelD++;
             }
-            
+            //this loops keeps running until the loops gets to a legal matrix coordinate that has not yet been traversed
             for(int i =0; i<travelD; i++){
                 rStart += directionsR[dTracker];
                 cStart += directionsC[dTracker];
