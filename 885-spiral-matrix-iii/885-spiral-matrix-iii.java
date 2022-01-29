@@ -4,8 +4,8 @@ class Solution {
         
         int mat[][] = new int[rows * cols][2];
         //directions technique right(0,1) down(1,0) left(0,-1) up(-1,0)
-        int directionsR[] = new int[]{0,1,0,-1};
-        int directionsC[] = new int[]{1,0,-1,0};
+        int directionsR[] = new int[]{0,1,0,-1,0};
+        //int directionsC[] = new int[]{1,0,-1,0};
         
         int dTracker=0;
         int travelD=0;
@@ -20,7 +20,9 @@ class Solution {
             
             for(int i =0; i<travelD; i++){
                 rStart += directionsR[dTracker];
-                cStart += directionsC[dTracker];
+                cStart += directionsR[dTracker + 1];
+                //cStart += directionsC[dTracker];
+                
                 //check if the new rows and columns are within the matrix boudaries
                 if(rStart < rows && rStart>=0 && cStart < cols &&  cStart>=0){ 
                     mat[rowTracker] = new int[]{rStart, cStart};
