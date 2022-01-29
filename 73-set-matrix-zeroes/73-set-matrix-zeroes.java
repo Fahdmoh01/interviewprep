@@ -23,7 +23,7 @@ class Solution {
         //Time complexity = O(M x N) Space Complexity = O(M x N)
         
         /*
-        O(1) Approach solution:check if the first column has a zero.continue the check from second element and use the first row/col as setZero tracker.
+        O(1) Approach solution:check if the first column has a zero.continue the check from second element and use the first row/col as setZero tracker.//traverse the matrix and take note of the index of rows and columns of the tracker r/c and set the zeros. //check if first row needs to be set as 0.//check if first zero needs to be set to zero
         */
         boolean isZero = false;
         for(int i =0; i< matrix.length; i++){
@@ -61,7 +61,7 @@ class Solution {
                 matrix[i][0] = 0;
             }
         }
-        
+        //Time complexity = O(M x N) Space Complexity = O(1)
         
     }
 }
