@@ -1,21 +1,26 @@
 class Solution {
     public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
-        //using == to compare strings does not work correctly. use str.equals("stringName")
-        int count = 0;
-        for(List<String> product : items){
-            boolean checker =findMatch(product, ruleKey, ruleValue);
-            if(checker)count++;
+        int sum =0;
+        for(List<String> item : items){
+            int count = matching(item, ruleKey, ruleValue);
+            sum+= count;
         }
-        return count;
+        return sum;
     }
     
-    boolean findMatch(List<String> list, String rk, String rv){
-        if(rk.equals("type")){
-            return rv.equals(list.get(0));
-        }else if(rk.equals("color")){
-            return rv.equals(list.get(1));
+    int matching(List<String> item,String rKey, String rVal){
+        if(rKey.equals("type")){
+            String type= item.get(0);
+            if(type.equals(rVal))return 1;
+        }else if(rKey.equals("color")){
+            String color = item.get(1);
+            if(color.equals(rVal))return 1;
         }else{
-             return rv.equals(list.get(2)); 
+            String name = item.get(2);
+            if(name.equals(rVal))return 1;
         }
+        return 0;
     }
+    
+    
 }
