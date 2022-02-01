@@ -1,35 +1,33 @@
 class Solution {
     public int diagonalSum(int[][] mat) {
-        int totalSum = secondaryDiagSum(mat) + primeDiagSum(mat);
+        int sec = secDiagonal(mat);
+        int prim = primDiagonal(mat);
+        int totalSum = sec + prim;
+        
         if(mat.length % 2 != 0){
-            int mid= mat.length /2;
-            totalSum = totalSum - mat[mid][mid];
-            return totalSum;
+            return totalSum - mat[mat.length /2][mat[0].length/2];
         }
-        return totalSum;
+        
+        return sec + prim;
     }
     
-    int secondaryDiagSum(int[][] arr){
-        int end = arr.length -1;
-        int secSum = 0;
-        while(end >= 0){
-            for(int row=0; row <arr.length; row++){
-                secSum += arr[row][end];   
-                end--;
-            }
+    int primDiagonal(int arr[][]){
+        int sum =0;
+        int diagTracker =0;
+        for(int i =0; i<arr.length; i++){
+            sum += arr[i][diagTracker];
+            diagTracker++;
         }
-        return secSum;
+        return sum;
     }
     
-    int primeDiagSum(int[][] arr){
-        int start = 0;
-        int primeSum = 0;
-        while( start < arr.length){
-        for(int row=0; row <arr.length; row++){
-                primeSum += arr[row][start];
-                start++;
-            }
+    int secDiagonal(int arr[][]){
+        int sum = 0;
+        int diagTracker = arr[0].length - 1;
+        for(int i = 0; i< arr.length; i++){
+            sum += arr[i][diagTracker];
+            diagTracker--;
         }
-        return primeSum;
+        return sum;
     }
 }
