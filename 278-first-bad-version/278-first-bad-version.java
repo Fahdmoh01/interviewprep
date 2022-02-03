@@ -6,19 +6,14 @@ public class Solution extends VersionControl {
         /*whie start< end. if true - search left. if false - search right.
         */
         //Edge Case.
-        //if(n<=2 && isBadVersion(n) == true) return n;
         
-        int first = search( n, true);
-//         int only = search( n, false);
-        
-//         if(first == -1){
-//             return only;
-//         }
+        int first = search(n);
+
         
         return first;
     }
     
-    int search( int num, boolean first){
+    int search( int num){
         int start  = 1;
         int end = num;
         //int ans = -1;
